@@ -1,4 +1,4 @@
 # Sample REST API
 
-Currently to IBM Cloud Object Storage (S3 storage) 
+Currently deployed to IBM Cloud Object Storage (S3 storage) 
 
