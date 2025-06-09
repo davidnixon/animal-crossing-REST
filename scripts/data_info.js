@@ -1,6 +1,6 @@
 import art from "../art.json" with {type: "json"}
 import hourly from "../hourly.json" with {type: "json"}
-import fossils from "../fossils.json" with {type: "json"}
+import fossils from "../json/fossils.json" with {type: "json"}
 import bugs from "../bugs.json" with {type: "json"}
 import fish from "../fish.json" with {type: "json"}
 import sea from "../sea.json" with {type: "json"}

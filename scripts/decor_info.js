@@ -1,6 +1,6 @@
-import wallMounted from "../wallmounted.json" with {type: "json"}
-import housewares from "../houseware.json" with {type: "json"}
-import misc from "../misc.json" with {type: "json"}
+import wallMounted from "../json/wallmounted.json" with {type: "json"}
+import housewares from "../json/houseware.json" with {type: "json"}
+import misc from "../json/misc.json" with {type: "json"}
 
 /**
  * Performs a deep equality comparison between two values

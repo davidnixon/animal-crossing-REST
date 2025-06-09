@@ -1,6 +1,6 @@
-import data from "../wallmounted.json" with {type: "json"};
-import housewares from "../houseware.json" with {type: "json"}
-import misc from "../misc.json" with {type: "json"}
+import data from "../json/wallmounted.json" with {type: "json"};
+import housewares from "../json/houseware.json" with {type: "json"}
+import misc from "../json/misc.json" with {type: "json"}
 import {encodeBoolean, encodeSqlString, normalizeUri} from "./sqlUtils.js";
 
 const mainValues = [];

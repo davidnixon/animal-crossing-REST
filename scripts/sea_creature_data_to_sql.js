@@ -1,4 +1,4 @@
-import data from "../sea.json" with {type: "json"};
+import data from "../json/sea.json" with {type: "json"};
 import {encodeBoolean, encodeSqlString, normalizeUri} from "./sqlUtils.js";
 
 const values = [];

@@ -1,4 +1,4 @@
-import data from "../villagers.json" with { type: "json" };
+import data from "../json/villagers.json" with { type: "json" };
 import { encodeSqlString, normalizeUri } from "./sqlUtils.js";
 
 const values = []

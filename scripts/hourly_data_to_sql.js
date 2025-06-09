@@ -1,4 +1,4 @@
-import data from "../hourly.json" with { type: "json" };
+import data from "../json/hourly.json" with { type: "json" };
 import { encodeSqlString, normalizeUri } from "./sqlUtils.js";
 
 const values = []
