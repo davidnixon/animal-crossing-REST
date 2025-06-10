@@ -33,10 +33,6 @@ The AI assistance significantly accelerated the development process, providing a
 - Using context tags like "#thisFile" makes prompting more precise
 - The diff/merge interface for applying code changes is very helpful
 
-## Deployment
-
-Currently deployed to IBM Cloud Object Storage (S3 storage)
-
 ## Docker
 
 This project includes a Dockerfile for containerization. To build and run the application using Docker:
