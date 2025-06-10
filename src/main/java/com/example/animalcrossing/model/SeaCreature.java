@@ -1,0 +1,93 @@
+package com.example.animalcrossing.model;
+
+import com.example.animalcrossing.utils.CsvUtils;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
+import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.Map;
+
+@Table(name = "SEA_CREATURES", schema = "PUBLIC")
+public class SeaCreature {
+    @Id
+    @JsonProperty("id")
+    @Column("ID")
+    public int id;
+
+    @JsonProperty("file-name")
+    @Column("FILE_NAME")
+    public String fileName;
+
+    @JsonProperty("speed")
+    @Column("SPEED")
+    public String speed;
+
+    @JsonProperty("shadow")
+    @Column("SHADOW")
+    public String shadow;
+
+    @JsonProperty("price")
+    @Column("PRICE")
+    public int price;
+
+    @JsonProperty("catch-phrase")
+    @Column("CATCH_PHRASE")
+    public String catchPhrase;
+
+    @JsonProperty("museum-phrase")
+    @Column("MUSEUM_PHRASE")
+    public String museumPhrase;
+
+    @JsonProperty("image_uri")
+    @Column("IMAGE_URI")
+    public String imageUri;
+
+    @JsonProperty("icon_uri")
+    @Column("ICON_URI")
+    public String iconUri;
+
+    @Column("MONTH_NORTHERN")
+    private String monthNorthern;
+
+    @Column("MONTH_SOUTHERN")
+    private String monthSouthern;
+
+    @Column("TIME")
+    private String time;
+
+    @Column("IS_ALL_DAY")
+    private boolean isAllDay;
+
+    @Column("IS_ALL_YEAR")
+    private boolean isAllYear;
+
+    @Column("MONTH_ARRAY_NORTHERN")
+    private String monthArrayNorthern; // CSV string
+
+    @Column("MONTH_ARRAY_SOUTHERN")
+    private String monthArraySouthern; // CSV string
+
+    @Column("TIME_ARRAY")
+    private String timeArray; // CSV string
+
+    @MappedCollection(idColumn = "SEA_CREATURE_ID", keyColumn = "LOCALE")
+    @JsonProperty(value = "name")
+    private Map<String, SeaCreatureName> name;
+
+    @JsonGetter("availability")
+    public Map<String, ?> getAvailability() {
+        return Map.ofEntries(
+                Map.entry("month-northern", monthNorthern),
+                Map.entry("month-southern", monthSouthern),
+                Map.entry("time", time),
+                Map.entry("isAllDay", isAllDay),
+                Map.entry("isAllYear", isAllYear),
+                Map.entry("month-array-northern", CsvUtils.parseCsvToIntList(monthArrayNorthern)),
+                Map.entry("month-array-southern", CsvUtils.parseCsvToIntList(monthArraySouthern)),
+                Map.entry("time-array", CsvUtils.parseCsvToIntList(timeArray))
+        );
+    }
+}
