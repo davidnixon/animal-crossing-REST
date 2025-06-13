@@ -11,6 +11,7 @@ This project is a recreation of the [ACNHAPI](https://github.com/alexislours/ACN
 This API was built using:
 - Spring Boot
 - Spring Data JDBC
+- Spring Doc - openapi
 - HSQLDB Database
 
 All static content (images, music) is served directly from the application.
